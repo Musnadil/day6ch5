@@ -5,10 +5,7 @@ import com.musnadil.day6ch5.model.RequestRegister
 import com.musnadil.day6ch5.model.ResponseLogin
 import com.musnadil.day6ch5.model.ResponseRegister
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService {
     @POST("api/v1/auth/register")
@@ -19,5 +16,8 @@ interface ApiService {
 
     @GET("api/v1/auth/me")
     fun checkAuth(@Header("Authorization") token:String):Call<ResponseRegister>
+
+    @PUT("api/v1/users")
+    fun updateUser(@Header("Authorization")token:String,@Body request: RequestLogin) :Call<ResponseRegister>
 
 }

@@ -50,7 +50,6 @@ class MainActivity : AppCompatActivity() {
                 override fun onFailure(call: Call<ResponseRegister>, t: Throwable) {
                     Toast.makeText(this@MainActivity, "${t.message}", Toast.LENGTH_SHORT).show()
                 }
-
             })
     }
 }

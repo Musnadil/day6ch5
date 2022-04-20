@@ -39,8 +39,6 @@ class LoginActivity : AppCompatActivity() {
     }
     private fun loginAction(email : String, pass: String){
         val request = RequestLogin(email,pass)
-
-
         ApiClient.instance.postLogin(request)
             .enqueue(object : Callback<ResponseLogin> {
                 override fun onResponse(
